@@ -124,6 +124,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'STATICFILES')
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFileStorage'
 
 # Default primary key field type
