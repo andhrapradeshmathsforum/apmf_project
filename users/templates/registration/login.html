@@ -1,0 +1,29 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}log in{% endblock title %}log in
+
+{% block content %}
+
+
+    <div class="row mt-5">
+        
+        <div class="col-md-4 mx-auto shadow p-3 mb-5 bg-white rounded">
+            <h2 > Login </h2>
+            
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <button class="btn btn-primary" style="background-color: #417690;" type="submit">Log in</button>
+            <p>Forgot password? <a href="{% url "password_reset" %}">Click here to reset</a></p>
+        </form>
+        </div>
+    </div>
+
+        
+   
+
+   
+   
+{% endblock content %}
+
