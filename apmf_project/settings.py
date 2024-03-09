@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-b)ys)0*%r(paxjjo87nzhz17g-*oy)5_fm2##@=^nx(gu=0%j4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,8 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware',    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -123,9 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE ='whienoise.storage.CompressdManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -140,4 +137,3 @@ LOGOUT_REDIRECT_URL = 'home'
 CRISPY_ALLOWED_TEMPLATE_PACKS='bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
